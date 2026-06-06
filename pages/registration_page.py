@@ -1,4 +1,3 @@
-import driver
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 from time import sleep
@@ -11,19 +10,21 @@ class RegistrationPage(Page):
     ENTER_EMAIL = (By.CSS_SELECTOR, 'input[id="Email-3"]')
 
     def open_registration_page(self):
-        self.driver.get('https://soft.reelly.io/sign-up')
-        #self.open_url(end_url='sign-up')
+        #self.driver.get('https://soft.reelly.io/sign-up') # after engaging it by it self in css_selectors.py driver started to work again. Reason unclear
+        self.open_url(end_url='sign-up')  #problems with the driver in environment at first
 
 
     def enter_full_name(self, full_name:str):
         self.input_text(full_name,*self.ENTER_FULL_NAME)
-        #sleep(2)
+        #sleep(2) #just to see outcome
 
     def enter_phone_number(self, phone_number:str):
         self.input_text(phone_number,*self.ENTER_PHONE_NUMBER)
+        #sleep(1) #just to see outcome
 
     def enter_email(self, email: str):
         self.input_text(email, *self.ENTER_EMAIL)
+        #sleep(1) # just to see outcome
 
     def verify_full_name(self, correct_full_name:str):
         self.verify_input_text(correct_full_name,*self.ENTER_FULL_NAME)
