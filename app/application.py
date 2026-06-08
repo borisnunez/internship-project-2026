@@ -1,5 +1,5 @@
-from pages.main_page import MainPage
 from pages.base_page import Page
+from pages.main_page import MainPage
 from pages.registration_page import RegistrationPage
 
 class Application:
